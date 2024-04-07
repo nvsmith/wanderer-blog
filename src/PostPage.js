@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 
 const PostPage = ({ posts, handleDelete }) => {
-    const { id } = useParams();
+    const { id } = useParams(); // pulls ID from URL
     const post = posts.find((post) => post.id.toString() === id);
 
     return (
