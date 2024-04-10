@@ -45,24 +45,34 @@ function App() {
         // Displays newest posts first
         setSearchResults(filteredResults.reverse());
     }, [posts, search]);
-
-    const handleSubmit = (e) => {
+    // Create (CRUD)
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
+        const id = posts.length ? parseInt(posts[posts.length - 1].id + 1) : 1;
         const datetime = format(new Date(), "MMMM dd, yyyy pp");
         const newPost = { id, title: postTitle, datetime, body: postBody };
-        const allPosts = [...posts, newPost];
-        setPosts(allPosts);
-        setPostTitle("");
-        setPostBody("");
-        navigate("/");
+        try {
+            const response = await api.post("/posts", newPost);
+            const allPosts = [...posts, response.data];
+            setPosts(allPosts);
+            setPostTitle("");
+            setPostBody("");
+            navigate("/");
+        } catch (err) {
+            console.log(`Error: ${err.message}`);
+        }
     };
-
-    const handleDelete = (id) => {
-        const postsList = posts.filter((post) => post.id !== id);
-        setPosts(postsList);
-        // Return to homepage
-        navigate("/");
+    // Delete (CRUD)
+    const handleDelete = async (id) => {
+        try {
+            await api.delete(`/posts/${id}`);
+            const postsList = posts.filter((post) => post.id !== id);
+            setPosts(postsList);
+            // Return to homepage
+            navigate("/");
+        } catch (err) {
+            console.log(`Error: ${err.message}`);
+        }
     };
 
     return (
@@ -105,3 +115,4 @@ function App() {
 export default App;
 
 // Chapt 19
+// 6:16
