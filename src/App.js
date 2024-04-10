@@ -15,6 +15,8 @@ function App() {
     const [searchResults, setSearchResults] = useState([]);
     const [postTitle, setPostTitle] = useState("");
     const [postBody, setPostBody] = useState("");
+    const [editTitle, setEditTitle] = useState("");
+    const [editBody, setEditBody] = useState("");
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -48,7 +50,7 @@ function App() {
     // Create (CRUD)
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const id = posts.length ? parseInt(posts[posts.length - 1].id + 1) : 1;
+        const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
         const datetime = format(new Date(), "MMMM dd, yyyy pp");
         const newPost = { id, title: postTitle, datetime, body: postBody };
         try {
@@ -62,6 +64,25 @@ function App() {
             console.log(`Error: ${err.message}`);
         }
     };
+    // Update (CRUD)
+    const handleEdit = async (id) => {
+        const datetime = format(new Date(), "MMMM dd, yyyy pp");
+        const updatedPost = { id, title: editTitle, datetime, body: editBody };
+        try {
+            const response = await api.put(`/posts/${id}`, updatedPost);
+            setPosts(
+                posts.map((post) =>
+                    post.id === id ? { ...response.data } : post
+                )
+            );
+            setEditTitle("");
+            setEditBody("");
+            navigate("/");
+        } catch (err) {
+            console.log(`Error: ${err.message}`);
+        }
+    };
+
     // Delete (CRUD)
     const handleDelete = async (id) => {
         try {
