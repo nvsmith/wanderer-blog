@@ -2,6 +2,7 @@ import Layout from "./Layout";
 import Home from "./Home";
 import NewPost from "./NewPost";
 import PostPage from "./PostPage";
+import EditPost from "./EditPost";
 import About from "./About";
 import Missing from "./Missing";
 import { Route, Routes, useNavigate } from "react-router-dom";
@@ -116,6 +117,7 @@ function App() {
                             />
                         }
                     />
+
                     <Route
                         path=":id"
                         element={
@@ -126,6 +128,19 @@ function App() {
                         }
                     />
                 </Route>
+                <Route
+                    path="edit/:id"
+                    element={
+                        <EditPost
+                            posts={posts}
+                            handleEdit={handleEdit}
+                            editTitle={editTitle}
+                            setEditTitle={setEditTitle}
+                            editBody={editBody}
+                            setEditBody={setEditBody}
+                        />
+                    }
+                />
                 <Route path="about" element={<About />} />
                 <Route path="*" element={<Missing />} />
             </Route>
@@ -135,5 +150,4 @@ function App() {
 
 export default App;
 
-// Chapt 19
-// 6:16
+// Chapt 20
