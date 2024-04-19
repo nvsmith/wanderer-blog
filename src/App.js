@@ -103,7 +103,13 @@ function App() {
         <Routes>
             <Route
                 path="/"
-                element={<Layout search={search} setSearch={setSearch} />}
+                element={
+                    <Layout
+                        search={search}
+                        setSearch={setSearch}
+                        width={width}
+                    />
+                }
             >
                 <Route index element={<Home posts={searchResults} />} />
                 <Route path="post">

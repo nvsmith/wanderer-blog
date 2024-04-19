@@ -28,6 +28,6 @@ const useWindowSize = () => {
         return cleanUp;
     }, []);
 
-    return useWindowSize;
+    return windowSize;
 };
 export default useWindowSize;
