@@ -8,7 +8,7 @@ const useAxiosFetch = (dataUrl) => {
 
     useEffect(() => {
         let isMounted = true;
-        //   Cancels request if component is unmounted
+        //   Cancels Axios request if component is unmounted
         const source = axios.CancelToken.source();
 
         const fetchData = async (url) => {
@@ -28,15 +28,15 @@ const useAxiosFetch = (dataUrl) => {
                 }
             } finally {
                 // timeout for testing only
-                isMounted && setTimeout(() => setIsLoading(false), 2000);
+                // isMounted && setTimeout(() => setIsLoading(false), 2000);
+                isMounted && setIsLoading(false);
             }
         };
-
+        // Call into action with the URL received by the hook
         fetchData(dataUrl);
 
         const cleanUp = () => {
-            console.log("cleanup functoin");
-            isMounted(false);
+            isMounted = false;
             source.cancel();
         };
 
