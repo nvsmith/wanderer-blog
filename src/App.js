@@ -116,9 +116,9 @@ function App() {
                 path="/"
                 element={
                     <Layout
-                        search={search}
-                        setSearch={setSearch}
-                        width={width}
+                    // search={search}
+                    // setSearch={setSearch}
+                    // width={width}
                     />
                 }
             >
@@ -126,9 +126,9 @@ function App() {
                     index
                     element={
                         <Home
-                            posts={searchResults}
-                            fetchError={fetchError}
-                            isLoading={isLoading}
+                        // posts={searchResults}
+                        // fetchError={fetchError}
+                        // isLoading={isLoading}
                         />
                     }
                 />

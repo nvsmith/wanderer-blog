@@ -4,12 +4,12 @@ import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 import { DataProvider } from "./context/DataContext";
 
-const Layout = ({ search, setSearch, width }) => {
+const Layout = () => {
     return (
         <div className="App">
             <DataProvider>
-                <Header title="The Wanderer Blog" width={width} />
-                <Nav search={search} setSearch={setSearch} />
+                <Header title="The Wanderer Blog" />
+                <Nav />
                 <Outlet />
                 <Footer />
             </DataProvider>
