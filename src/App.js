@@ -112,39 +112,10 @@ function App() {
 
     return (
         <Routes>
-            <Route
-                path="/"
-                element={
-                    <Layout
-                    // search={search}
-                    // setSearch={setSearch}
-                    // width={width}
-                    />
-                }
-            >
-                <Route
-                    index
-                    element={
-                        <Home
-                        // posts={searchResults}
-                        // fetchError={fetchError}
-                        // isLoading={isLoading}
-                        />
-                    }
-                />
+            <Route path="/" element={<Layout />}>
+                <Route index element={<Home />} />
                 <Route path="post">
-                    <Route
-                        index
-                        element={
-                            <NewPost
-                                handleSubmit={handleSubmit}
-                                postTitle={postTitle}
-                                setPostTitle={setPostTitle}
-                                postBody={postBody}
-                                setPostBody={setPostBody}
-                            />
-                        }
-                    />
+                    <Route index element={<NewPost />} />
 
                     <Route
                         path=":id"

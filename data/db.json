@@ -17,6 +17,18 @@
       "title": "3rd post",
       "datetime": "April 11, 2024 7:26:36 PM",
       "body": "Some text here for the body. "
+    },
+    {
+      "id": "2111",
+      "title": "Wingardium Leviosa",
+      "datetime": "April 23, 2024 12:11:51 PM",
+      "body": "is the spell to make things float"
+    },
+    {
+      "id": "21111",
+      "title": "Alohomora",
+      "datetime": "April 23, 2024 12:16:58 PM",
+      "body": "Unlocks doors"
     }
   ]
 }

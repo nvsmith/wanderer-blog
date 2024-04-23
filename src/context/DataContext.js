@@ -114,6 +114,11 @@ export const DataProvider = ({ children }) => {
                 searchResults,
                 fetchError,
                 isLoading,
+                handleSubmit,
+                postTitle,
+                setPostTitle,
+                postBody,
+                setPostBody,
             }}
         >
             {children}
