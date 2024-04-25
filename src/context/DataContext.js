@@ -1,11 +1,11 @@
 import { createContext, useState, useEffect } from "react";
-// import { Route, Routes, useNavigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { format } from "date-fns";
 import api from "../api/posts";
 import useWindowSize from "../hooks/useWindowSize";
 import useAxiosFetch from "../hooks/useAxiosFetch";
 
+// Business logic container
 const DataContext = createContext({});
 // Provides data to different components
 export const DataProvider = ({ children }) => {
@@ -56,6 +56,7 @@ export const DataProvider = ({ children }) => {
         // Displays newest posts first
         setSearchResults(filteredResults.reverse());
     }, [posts, search]);
+
     // Create (CRUD)
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -73,6 +74,7 @@ export const DataProvider = ({ children }) => {
             console.log(`Error: ${err.message}`);
         }
     };
+
     // Update (CRUD)
     const handleEdit = async (id) => {
         const datetime = format(new Date(), "MMMM dd, yyyy pp");
@@ -121,7 +123,6 @@ export const DataProvider = ({ children }) => {
                 setPostBody,
                 posts,
                 handleDelete,
-                posts,
                 handleEdit,
                 editBody,
                 setEditBody,
