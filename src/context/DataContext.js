@@ -121,6 +121,12 @@ export const DataProvider = ({ children }) => {
                 setPostBody,
                 posts,
                 handleDelete,
+                posts,
+                handleEdit,
+                editBody,
+                setEditBody,
+                editTitle,
+                setEditTitle,
             }}
         >
             {children}
