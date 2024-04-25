@@ -7,12 +7,12 @@ import { DataProvider } from "./context/DataContext";
 const Layout = () => {
     return (
         <div className="App">
+            <Header title="The Wanderer Blog" />
             <DataProvider>
-                <Header title="The Wanderer Blog" />
                 <Nav />
                 <Outlet />
-                <Footer />
             </DataProvider>
+            <Footer />
         </div>
     );
 };
