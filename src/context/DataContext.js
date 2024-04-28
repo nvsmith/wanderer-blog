@@ -72,19 +72,6 @@ export const DataProvider = ({ children }) => {
         }
     };
 
-    // Delete (CRUD)
-    const handleDelete = async (id) => {
-        try {
-            await api.delete(`/posts/${id}`);
-            const postsList = posts.filter((post) => post.id !== id);
-            setPosts(postsList);
-            // Return to homepage
-            navigate("/");
-        } catch (err) {
-            console.log(`Error: ${err.message}`);
-        }
-    };
-
     return (
         <DataContext.Provider
             value={{
@@ -95,7 +82,6 @@ export const DataProvider = ({ children }) => {
                 isLoading,
                 posts,
                 setPosts,
-                handleDelete,
                 handleEdit,
                 editBody,
                 setEditBody,
