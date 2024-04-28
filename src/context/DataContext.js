@@ -11,8 +11,6 @@ export const DataProvider = ({ children }) => {
     const [posts, setPosts] = useState([]);
     const [search, setSearch] = useState("");
     const [searchResults, setSearchResults] = useState([]);
-    const [editTitle, setEditTitle] = useState("");
-    const [editBody, setEditBody] = useState("");
     const navigate = useNavigate();
     // data received by AxiosFetch
     const { data, fetchError, isLoading } = useAxiosFetch(
@@ -53,25 +51,6 @@ export const DataProvider = ({ children }) => {
         setSearchResults(filteredResults.reverse());
     }, [posts, search]);
 
-    // Update (CRUD)
-    const handleEdit = async (id) => {
-        const datetime = format(new Date(), "MMMM dd, yyyy pp");
-        const updatedPost = { id, title: editTitle, datetime, body: editBody };
-        try {
-            const response = await api.put(`/posts/${id}`, updatedPost);
-            setPosts(
-                posts.map((post) =>
-                    post.id === id ? { ...response.data } : post
-                )
-            );
-            setEditTitle("");
-            setEditBody("");
-            navigate("/");
-        } catch (err) {
-            console.log(`Error: ${err.message}`);
-        }
-    };
-
     return (
         <DataContext.Provider
             value={{
@@ -82,11 +61,6 @@ export const DataProvider = ({ children }) => {
                 isLoading,
                 posts,
                 setPosts,
-                handleEdit,
-                editBody,
-                setEditBody,
-                editTitle,
-                setEditTitle,
             }}
         >
             {children}
