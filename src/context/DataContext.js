@@ -1,7 +1,4 @@
 import { createContext, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { format } from "date-fns";
-import api from "../api/posts";
 import useAxiosFetch from "../hooks/useAxiosFetch";
 
 // Business logic container
@@ -11,7 +8,6 @@ export const DataProvider = ({ children }) => {
     const [posts, setPosts] = useState([]);
     const [search, setSearch] = useState("");
     const [searchResults, setSearchResults] = useState([]);
-    const navigate = useNavigate();
     // data received by AxiosFetch
     const { data, fetchError, isLoading } = useAxiosFetch(
         "http://localhost:3500/posts"
