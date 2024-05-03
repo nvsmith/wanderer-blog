@@ -29,6 +29,12 @@
       "title": "Rome",
       "datetime": "May 03, 2024 11:09:40 AM",
       "body": "The Eternal City"
+    },
+    {
+      "id": 6,
+      "title": "Petra, Jordan",
+      "datetime": "May 03, 2024 11:16:22 AM",
+      "body": "The Rose City"
     }
   ]
 }
