@@ -1,40 +1,34 @@
 {
   "posts": [
     {
-      "id": "1",
-      "title": "1st post (edited)",
-      "datetime": "April 11, 2024 9:36:50 PM",
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      "id": 1,
+      "title": "Paris",
+      "datetime": "May 03, 2024 11:08:28 AM",
+      "body": "The City of Love"
     },
     {
-      "id": "2",
-      "title": "Second post",
-      "datetime": "July 16, 2021 11:47:48 AM",
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. two"
+      "id": 2,
+      "title": "Prague",
+      "datetime": "May 03, 2024 11:08:45 AM",
+      "body": "The Heart of Europe"
     },
     {
-      "id": "21",
-      "title": "3rd post",
-      "datetime": "April 11, 2024 7:26:36 PM",
-      "body": "Some text here for the body. "
+      "id": 3,
+      "title": "Las Vegas",
+      "datetime": "May 03, 2024 11:09:07 AM",
+      "body": "Sin City"
     },
     {
-      "id": "2111",
-      "title": "Wingardium Leviosa",
-      "datetime": "April 28, 2024 8:39:21 AM",
-      "body": "The spell to make things float."
+      "id": 4,
+      "title": "Los Angeles",
+      "datetime": "May 03, 2024 11:09:22 AM",
+      "body": "The City of Angels"
     },
     {
-      "id": "21111",
-      "title": "Alohomora",
-      "datetime": "April 28, 2024 8:43:13 AM",
-      "body": "This handy little spell will unlock uncharmed doors."
-    },
-    {
-      "id": "211111",
-      "title": "Milan, Italy",
-      "datetime": "April 24, 2024 7:39:02 PM",
-      "body": "High Fashion meet High Tech"
+      "id": 5,
+      "title": "Rome",
+      "datetime": "May 03, 2024 11:09:40 AM",
+      "body": "The Eternal City"
     }
   ]
 }
